@@ -1,0 +1,39 @@
+﻿<Window x:Class="Choice_Phobia_Disorder_Saver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Choice_Phobia_Disorder_Saver"
+        mc:Ignorable="d"
+        Title="拯救选择困难" Height="450" Width="800" Icon="GeneralLOGO.ico">
+    <Grid>
+        <TextBox x:Name="resultContent" HorizontalAlignment="Center" VerticalAlignment="Top" Height="84" Width="197" Margin="0,45,0,0" FontSize="36" IsReadOnly="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TabControl x:Name="modeChooser" HorizontalAlignment="Left" Height="245" Margin="0,174,0,0" VerticalAlignment="Top" Width="792">
+            <TabItem x:Name="modeReadFromFile" Header="从文件中读取">
+                <Grid Background="#FFE5E5E5" Margin="0,0,0,81">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="253*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="fileName" HorizontalAlignment="Left" Height="23" Margin="19.156,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="551" IsReadOnly="True" Grid.Column="1"/>
+                    <Button x:Name="fileSelector" Content="浏览..." HorizontalAlignment="Left" Margin="597.156,51,0,0" VerticalAlignment="Top" Width="75" Click="FileSelector_Click" Grid.Column="1"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="modeReadFromTextbox" Header="多行文本模式">
+                <Grid Background="#FFE5E5E5"  Margin="0,0,0,81">
+                    <TextBox x:Name="itemContent" HorizontalAlignment="Left" Height="117" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="766" AcceptsReturn="True" AcceptsTab="True"/>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="modeDiy" Header="自定义模式">
+                <Grid Background="#FFE5E5E5"  Margin="0,0,0,81">
+                    <TextBox x:Name="recordCount" HorizontalAlignment="Left" Height="23" Margin="98,43,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+                    <Label Content="选择数量：" HorizontalAlignment="Left" Margin="10,43,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="recordSum" HorizontalAlignment="Left" Height="23" Margin="98,10,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="120" HorizontalContentAlignment="Right"/>
+                    <Label Content="总数：" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="generateButton" Content="来，我帮你选" Margin="0,350,0,20" FontSize="24" VerticalContentAlignment="Center" HorizontalAlignment="Center" Click="generateButton_Click"/>
+    </Grid>
+</Window>
